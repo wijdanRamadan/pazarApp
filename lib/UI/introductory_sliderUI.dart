@@ -78,25 +78,28 @@ class _IntroductoryUIState extends State<IntroductoryUI> {
                             ],),
                           ),
                         if (_currentPage==2)
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0.0,350.0,0.0,0.0),
-                            child:  FlatButton(
-                              onPressed: (){},
-                                child: Text(
-                                  'ابدأ التسوق',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold
+                          SizedBox(
+                            width: double.infinity,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(0.0,350.0,0.0,0.0),
+                              child:  FlatButton(
+                                onPressed: (){},
+                                  child: Text(
+                                    'ابدأ التسوق',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold
+                                    ),
                                   ),
-                                ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                          ),
-                              color: Colors.black,
-                              splashColor: Colors.black,
-                              textColor: Colors.white,
-                            ))
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                            ),
+                                color: Colors.black,
+                                splashColor: Colors.black,
+                                textColor: Colors.white,
+                              )),
+                          )
                       ]),
                     ) ,
            ),

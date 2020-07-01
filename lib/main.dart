@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pazzarapp/UI/loadingUI.dart';
 import 'package:pazzarapp/UI/start_shoppingUI.dart';
 
 import 'UI/introductory_sliderUI.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: StartShopping (),
+      home: LoadingUI (),
     );
   }
 }

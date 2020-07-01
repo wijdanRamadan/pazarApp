@@ -20,7 +20,7 @@ class LoadingUI extends StatelessWidget {
 
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text('pazzarapp.com',                    //Loading page Text
+                  child: Text('pazarapp.com',                    //Loading page Text
                     style: TextStyle(color: Colors.black,
                                      fontSize: 40.0,
                                      fontWeight:FontWeight.bold),
