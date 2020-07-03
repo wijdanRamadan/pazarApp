@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:pazzarapp/appDesign/introductory_ui_design.dart';
 import 'package:pazzarapp/model/slide.dart';
 import 'package:pazzarapp/widgets/slide_dots.dart';
 import 'package:pazzarapp/widgets/slide_item.dart';
-import 'dart:async';
 
 
 class IntroductoryUI extends StatefulWidget {
@@ -13,6 +13,8 @@ class IntroductoryUI extends StatefulWidget {
 }
 
 class _IntroductoryUIState extends State<IntroductoryUI> {
+
+  IntroductoryDesign _design = IntroductoryDesign();
 
   int _currentPage =0;
 
@@ -49,7 +51,7 @@ class _IntroductoryUIState extends State<IntroductoryUI> {
            child: Container(
                      decoration: BoxDecoration(
                        image: DecorationImage(
-                         image: AssetImage ('assets/introImage.png'),
+                         image: AssetImage (_design.backgroundImage),
                             fit: BoxFit.cover,
 
                )
@@ -84,11 +86,11 @@ class _IntroductoryUIState extends State<IntroductoryUI> {
                               padding: const EdgeInsets.fromLTRB(0.0,350.0,0.0,0.0),
                               child:  FlatButton(
                                 onPressed: (){},
-                                  child: Text(
-                                    'ابدأ التسوق',
+                                  child: Text(_design.buttonText
+                                    ,
                                     style: TextStyle(
                                       fontSize: 20,
-                                      color: Colors.white,
+                                      color:_design.buttonTextColor,
                                       fontWeight: FontWeight.bold
                                     ),
                                   ),

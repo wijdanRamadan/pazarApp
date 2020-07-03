@@ -1,16 +1,20 @@
 
 import 'package:flutter/material.dart';
+import 'package:pazzarapp/appDesign/loading_ui_design.dart';
 
 class LoadingUI extends StatelessWidget {
+
+  LoadingUIDesign _uiDesign = LoadingUIDesign();
 
   @override
   Widget build(BuildContext context) {
 
+
     return Scaffold(
+      backgroundColor: _uiDesign.backgroundColor,
       body: SafeArea (
           child: Container(
 
-            color: Colors.yellow[500],
             alignment: Alignment.center,
 
 
@@ -20,15 +24,15 @@ class LoadingUI extends StatelessWidget {
 
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text('pazarapp.com',                    //Loading page Text
-                    style: TextStyle(color: Colors.black,
+                  child: Text(_uiDesign.website,                    //Loading page Text
+                    style: TextStyle(color: _uiDesign.websiteFontColor,
                                      fontSize: 40.0,
                                      fontWeight:FontWeight.bold),
                   ),
                 ),
 
-                Icon(Icons.shopping_cart ,                         //Loading page icon
-                  color: Colors.black,
+                Icon(_uiDesign.icon.icon ,                         //Loading page icon
+                  color:_uiDesign.iconColor,
                   size: 100.0,),
               ],
             ),

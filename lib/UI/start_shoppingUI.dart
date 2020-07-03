@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pazzarapp/appDesign/start_shopping_design.dart';
 
 
 class StartShopping extends StatefulWidget {
@@ -10,7 +11,7 @@ class StartShopping extends StatefulWidget {
 
 class _StartShoppingState extends State<StartShopping> {
 
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  StartShoppingDesign _design = StartShoppingDesign();
 
 
   @override
@@ -20,7 +21,7 @@ class _StartShoppingState extends State<StartShopping> {
         child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage ('assets/introImage.png'),
+                image: AssetImage (_design.backgroundImage),
                 fit: BoxFit.cover,
 
               )
@@ -38,14 +39,14 @@ class _StartShoppingState extends State<StartShopping> {
                      Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children :<Widget>[
-                      Icon(Icons.shopping_cart,
+                      Icon(_design.appIcon.icon,
                       size: 50.0,
-                      color: Colors.black,
+                      color:_design.iconColor,
                        ),
 
                         Padding(
                           padding: const EdgeInsets.all(15.0),
-                          child: Text('PazarApp' ,
+                          child: Text(_design.appName,
                             style: TextStyle(fontSize: 20.0 ,
                                 fontWeight: FontWeight.bold) ,),
                         ),
@@ -55,9 +56,11 @@ class _StartShoppingState extends State<StartShopping> {
 
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0.0,30.0,0.0,0.0),
-                    child: Text('رقم الموبايل' ,
+                    child: Text(_design.labelText ,
                       style: TextStyle(fontSize: 20.0 ,
-                          fontWeight: FontWeight.bold) ,),
+                          fontWeight: FontWeight.bold,
+                      color: _design.labelTextColor) ,
+                    ),
                   ),
 
                     SizedBox(
@@ -127,23 +130,22 @@ class _StartShoppingState extends State<StartShopping> {
                       width: double.infinity,
                       child: FlatButton(
 
-                        color: Colors.black,
+                        color: _design.nextButtonBackgroundColor,
                         onPressed: (){},
 
-                      child: Text('التالي',
+                      child: Text(_design.nextButtonText,
                         style: TextStyle(fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: _design.nextButtonTextColor),
                       ),
                       ),
                     ),
                   ),
                   FlatButton(
-                    color: Colors.black,
-                    focusColor: Colors.black,
-                    child: Text('تخطي ',
+
+                    child: Text(_design.skipButtonText,
                       style: TextStyle(fontSize: 20.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                      color: _design.skipButtonTextColor),
                     ),
                   ),
 
