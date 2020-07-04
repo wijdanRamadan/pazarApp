@@ -2,15 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:pazzarapp/appDesign/introductory_ui_design.dart';
-import 'package:pazzarapp/model/slide.dart';
+import 'package:pazzarapp/model/introductory_slide.dart';
 
-class SlideItem extends StatelessWidget {
+class IntroductorySlideItem extends StatelessWidget {
 
   IntroductoryDesign _design = IntroductoryDesign();
 
    int index;
 
-   SlideItem(this.index);
+  IntroductorySlideItem(this.index);
 
   @override
   Widget build(BuildContext context) {

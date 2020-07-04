@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:pazzarapp/appDesign/introductory_ui_design.dart';
-import 'package:pazzarapp/model/slide.dart';
+import 'package:pazzarapp/model/introductory_slide.dart';
 import 'package:pazzarapp/widgets/slide_dots.dart';
-import 'package:pazzarapp/widgets/slide_item.dart';
+import 'package:pazzarapp/widgets/introductory_slide_item.dart';
 
 
 class IntroductoryUI extends StatefulWidget {
@@ -65,7 +65,7 @@ class _IntroductoryUIState extends State<IntroductoryUI> {
                           scrollDirection: Axis.horizontal,
                           controller: _pageController,
                           itemCount: slideList.length,
-                          itemBuilder: (context,i)=>SlideItem(i),
+                          itemBuilder: (context,i)=>  IntroductorySlideItem(i),
                         ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(150.0,250.0,0.0,0.0),
@@ -74,9 +74,9 @@ class _IntroductoryUIState extends State<IntroductoryUI> {
                               children: <Widget>[
                               for(int i=0;i<slideList.length;i++)
                                 if(i==_currentPage)
-                                  SlideDots(true)
+                                  SlideDots(true,false)
                               else
-                                SlideDots(false)
+                                SlideDots(false,false)
                             ],),
                           ),
                         if (_currentPage==2)

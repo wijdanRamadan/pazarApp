@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SlideDots extends StatelessWidget {
+
   bool isActive;
-  SlideDots(this.isActive);
+  bool isHome;
+
+  SlideDots(this.isActive,this.isHome);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +15,8 @@ class SlideDots extends StatelessWidget {
       height: isActive ? 12 : 8,
       width: isActive ? 12 : 8,
       decoration: BoxDecoration(
-        color: isActive ? Colors.black : Colors.grey,
+        color: isActive&&!isHome ? Colors.black : Colors.grey ,
+
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
